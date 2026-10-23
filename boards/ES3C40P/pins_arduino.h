@@ -128,7 +128,9 @@ static const uint8_t MISO = SPI_MISO_PIN;
 // =============================================
 // Font Sizes
 // =============================================
-#define FP 1
+// FP (small font = 1) is provided for Bruce sources by include/precompiler_flags.h.
+// Do not define FP globally in this Arduino variant header: FastLED uses FP
+// as a fixed-point type, and the macro corrupts its own library compilation.
 #define FM 2
 #define FG 3
 
